@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" class="logo" />
+
+        <h1>Offline Wallet Generator</h1>
+    </header>
+
+    <p class="warning">
+        This is your wallet secret phrase. It encodes your private key. <br/>
+        Write it down and keep it in a safe location.<br/>
+        You will need this secret phrase in order to access your Zen Protocol tokens.
+    </p>
+
+    <div id="secret-phrase" class="secret-phrase">
+    </div>
+
+    <p class="warning">
+        This is your public key. Scan the QR code at <a class="link" href="https://crowdsale.zenprotocol.com/create-wallet/offline">crowdsale.zenprotocol.com/create-wallet/offline</a>, or copy and paste the public key below.<br/>
+        Save your public key as well in order to view your orders.
+    </p>
+
+    <div class="flexbox">
+        <div id="public-key" class="public-key">
+
+        </div>
+
+        <canvas id="qr" class="qr"></canvas>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

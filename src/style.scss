@@ -1,0 +1,77 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+
+html, body
+{
+  margin: 0 auto;
+  background: #1c1b33;
+  color: #8aa0bf;
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow: hidden;
+  width:800px;
+}
+
+header {
+  margin-top: 30px;
+
+  .logo {
+
+  }
+
+  h1 {
+    margin-top: 59px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+  }
+}
+
+.secret-phrase {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  padding: 25px 40px 25px 40px;
+  width: 642px;
+  border-radius: 4px;
+  background-color: #0e0e25;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.54;
+  color: #83d6f3;
+}
+
+.warning {
+  width: 642px;
+  font-size: 14px;
+  color: #8aa0bf;
+  line-height: 1.64;
+}
+
+.flexbox {
+  display: flex;
+  width: 642px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.public-key {
+  border-radius: 2px;
+  background-color: #0e0e25;
+  color: #83d6f3;
+  padding: 12px 16px 12px 16px;
+  font-size: 14px;
+}
+
+.qr {
+
+}
+
+.link {
+  text-decoration: none;
+  color: #83d6f3;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
