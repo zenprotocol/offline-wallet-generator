@@ -11,20 +11,26 @@ if (!secretPhraseElement.innerText) {
     const seed = bip39.mnemonicToSeed(secretPhrase)
     const node = bitcoin.HDNode.fromSeedBuffer(seed)
     const publicKey = node.derivePath("m/44'/258'/0'/0/0").keyPair.getPublicKeyBuffer()
-    const publicKeyWithPrefix = new Buffer(34)
-    publicKeyWithPrefix.writeUInt8(168, 0)
-    Buffer.from(publicKey).copy(publicKeyWithPrefix, 1)
 
-    const encoded = base58.encode(publicKeyWithPrefix)
+    if (publicKey.length !== 33) {
+        console.log('error, publickey wrong length')
+    } else {
 
-    secretPhraseElement.innerText = secretPhrase
-    publicKeyElement.innerText = encoded
+        const publicKeyWithPrefix = new Buffer(34)
+        publicKeyWithPrefix.writeUInt8(168, 0)
+        Buffer.from(publicKey).copy(publicKeyWithPrefix, 1)
 
-    const qr = new QRious({
-        element: document.getElementById('qr'),
-        value: encoded,
-        size: 150
-    })
+        const encoded = base58.encode(publicKeyWithPrefix)
+
+        secretPhraseElement.innerText = secretPhrase
+        publicKeyElement.innerText = encoded
+
+        const qr = new QRious({
+            element: document.getElementById('qr'),
+            value: encoded,
+            size: 150
+        })
+    }
 }
 
 
