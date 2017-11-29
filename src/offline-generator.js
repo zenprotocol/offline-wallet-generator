@@ -24,14 +24,14 @@ if (!secretPhraseElement.innerText) {
 
         secretPhraseElement.innerText = secretPhrase
         publicKeyElement.innerText = encoded
-
-        const qr = new QRious({
-            element: document.getElementById('qr'),
-            value: encoded,
-            size: 150
-        })
     }
 }
+
+const qr = new QRious({
+    element: document.getElementById('qr'),
+    value: publicKeyElement.innerText,
+    size: 150
+})
 
 
 
